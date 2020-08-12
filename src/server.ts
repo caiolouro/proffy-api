@@ -3,6 +3,10 @@ import express from 'express'
 const app = express()
 app.use(express.json())
 
+app.get('/', (req, res) => {
+    return res.send("hola mundo!")
+})
+
 app.get('/users', (req, res) => {
     console.log('query', req.query)
     return res.json([{ name: 'Yo' }, { name: 'Yo2' }])
